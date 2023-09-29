@@ -1,0 +1,83 @@
+@keyframes color {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(80deg, red, black, blue);
+  background-size: 200% 1000%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  animation: color 12s ease-in infinite;
+  min-height: 100vh;
+
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+#intro {
+  color: white;
+}
+#myLabel {
+  color: white;
+}
+.introduction {
+  text-align: center;
+  color: white;
+}
+h1 {
+  text-align: center;
+  color: white;
+}
+h2 {
+  /*text-shadow: 2px 1px 0px #d1cb95 ;*/
+  color: white;
+  text-align: center;
+}
+h3 {
+  color: white;
+  text-align: center;
+}
+p {
+  color: white;
+  text-align: center;
+}
+button {
+  text-align: center;
+}
+.small-icon {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+.small-icon:hover {
+  transform: translateY(-15px);
+}
+.btn {
+  width: 50px;
+  height: 50px;
+
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+
+  /*transition: transform 0.3s ease 0s;*/
+}
+.btn:hover {
+  transform: translateY(-15px);
+}
