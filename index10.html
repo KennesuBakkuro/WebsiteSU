@@ -18,7 +18,7 @@
       <h1>STUDIO_UNKNOWN TV</h1>
       <h3>Have fun Watching!!</h3>
 
-      <video id="videoPlayer" controls autoplay>
+      <video id="videoPlayer" autoplay>
         Your browser does not support the video tag.
       </video>
 
@@ -33,6 +33,14 @@
           {
             title: "Up Next: Gildedguy Gets Up",
             source: "videos/e1.mp4",
+          },
+          {
+            title: "Up Next: LACKADAISY",
+            source: "videos/e2.mp4",
+          },
+          {
+            title: "Up Next: LACKADAISY",
+            source: "videos/e3.mp4",
           },
           // Add more video entries as needed
         ];
@@ -57,6 +65,99 @@
         // Start playing the first video
         playVideo(currentVideoIndex);
       </script>
+      <h2>Click This Button To Add Control To The Video</h2>
+       <button id="toggleControlsButton">Add Controls</button>
+
+       <script>
+           const video = document.getElementById('videoPlayer');
+           const toggleButton = document.getElementById('toggleControlsButton');
+   
+           toggleButton.addEventListener('click', () => {
+               if (video.hasAttribute('controls')) {
+                   video.removeAttribute('controls');
+               } else {
+                   video.setAttribute('controls', true);
+               }
+           });
+       </script>
+      <h3>
+        Note: After the video is finished it will automatically<br />
+        moved to the next, if the video looped, it means <br />
+        the website haven't updated yet and there's only one<br />
+        video playing just to remind you we are still working on this, <br>
+        anyways have fun watching we will update this<br />
+        every month so have a good day!
+      </h3>
+      <br />
+      <hr />
+      <h1>BROADCAST CREDITS</h1>
+      <h3>
+        Sunshine<br />
+        By: Gato de Rua<br /><br />
+        <a href="https://www.youtube.com/channel/UC-iWgRaHzruzNRFLJ0p2Hag" target="_blank">
+          <img class="btn" 
+          src="images/youtube-icon-png-31013.png" 
+          alt="My Icon" style="border: none;" 
+          class="small-icon"></button>
+      </a>
+      <br>
+      <h3>
+        Gildedguy Gets Up!<br />
+        By: Gildedguy <br /><br />
+        <a href="https://www.youtube.com/@gildedguy" target="_blank">
+          <img class="btn" 
+          src="images/youtube-icon-png-31013.png" 
+          alt="My Icon" style="border: none;" 
+          class="small-icon"></button>
+      </a>
+      <br>
+      <br>
+        MURDER DRONES <br />
+        By: GLITCH PRODUCTION<br /><br />
+        <a href="https://www.youtube.com/@GLITCH" target="_blank">
+          <img class="btn" 
+          src="images/youtube-icon-png-31013.png" 
+          alt="My Icon" style="border: none;" 
+          class="small-icon"></button>
+      </a>
+      <br>
+      <br>
+        CliffSide<br />
+        By: Liam Vickers Animation<br /><br />
+        <a href="https://www.youtube.com/@LiamVickersAnimation" target="_blank">
+          <img class="btn" 
+          src="images/youtube-icon-png-31013.png" 
+          alt="My Icon" style="border: none;" 
+          class="small-icon"></button>
+      </a>
+      <br>
+      <br>
+        SpookyMonth<br />
+        By: SrPelo<br /><br />
+        <a href="https://www.youtube.com/@SrPelo" target="_blank">
+          <img class="btn" 
+          src="images/youtube-icon-png-31013.png" 
+          alt="My Icon" style="border: none;" 
+          class="small-icon"></button>
+      </a>
+      <br>
+      <br>
+      LACKADAISY<br />
+      By: Lackadaisy<br /><br />
+      <a href="https://www.youtube.com/@LackadaisyComic" target="_blank">
+        <img class="btn" 
+        src="images/youtube-icon-png-31013.png" 
+        alt="My Icon" style="border: none;" 
+        class="small-icon"></button>
+    </a>
+    <br>
+    <br>
+        And More Soon!
+      </h3>
+      <hr />
+      <h2>Thank You For Your Support!!</h2>
+      <h3>STUDIO UNKNOWN</h3>
+      <hr />
     </main>
   </body>
 </html>
