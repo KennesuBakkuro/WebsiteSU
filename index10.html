@@ -16,78 +16,82 @@
   <body>
     <main>
       <h1>STUDIO_UNKNOWN TV</h1>
-      <h3>Have fun Watching!!</h3>
+    <h3>Have fun Watching!!</h3>
 
-      <video id="videoPlayer" autoplay>
+    <video id="videoPlayer" controls autoplay>
         Your browser does not support the video tag.
-      </video>
+    </video>
 
-      <div id="videoInfo">
+    <div id="videoInfo">
         <h2>Video Title</h2>
-      </div>
+    </div>
 
-      <script>
+    <button id="toggleControlsButton">Remove Controls</button>
+    <button id="fullscreenButton">Fullscreen</button>
+
+    <script>
         const videoPlayer = document.getElementById("videoPlayer");
         const videoInfo = document.getElementById("videoInfo");
+        const toggleButton = document.getElementById("toggleControlsButton");
+        const fullscreenButton = document.getElementById("fullscreenButton");
+
         const playlist = [
-          {
-            title: "Up Next: Gildedguy Gets Up",
-            source: "videos/e1.mp4",
-          },
-          {
-            title: "Up Next: LACKADAISY",
-            source: "videos/e2.mp4",
-          },
-          {
-            title: "Up Next: LACKADAISY",
-            source: "videos/e3.mp4",
-          },
-          // Add more video entries as needed
+            {
+                title: "Up Next: Gildedguy Gets Up",
+                source: "videos/e1.mp4",
+            },
+            {
+                title: "Up Next: LACKADAISY",
+                source: "videos/e2.mp4",
+            },
+            {
+                title: "Up Next: LACKADAISY",
+                source: "videos/e3.mp4",
+            },
+            // Add more video entries as needed
         ];
         let currentVideoIndex = 0;
 
         function playVideo(index) {
-          if (index < playlist.length) {
-            const video = playlist[index];
-            videoPlayer.src = video.source;
-            videoInfo.innerHTML = `<h2>${video.title}</h2>`;
-            currentVideoIndex = index;
-          }
+            if (index < playlist.length) {
+                const video = playlist[index];
+                videoPlayer.src = video.source;
+                videoInfo.innerHTML = `<h2>${video.title}</h2>`;
+                currentVideoIndex = index;
+            }
         }
 
         // Event listener to play the next video when the current video ends
         videoPlayer.addEventListener("ended", () => {
-          currentVideoIndex++;
-          playVideo(currentVideoIndex);
-          videoPlayer.play(); // Autoplay the next video
+            currentVideoIndex++;
+            playVideo(currentVideoIndex);
+            videoPlayer.play(); // Autoplay the next video
         });
 
         // Start playing the first video
         playVideo(currentVideoIndex);
-      </script>
-      <h2>Click This Button To Add Control To The Video</h2>
-       <button id="toggleControlsButton">Add Controls</button>
 
-       <script>
-           const video = document.getElementById('videoPlayer');
-           const toggleButton = document.getElementById('toggleControlsButton');
-   
-           toggleButton.addEventListener('click', () => {
-               if (video.hasAttribute('controls')) {
-                   video.removeAttribute('controls');
-               } else {
-                   video.setAttribute('controls', true);
-               }
-           });
-       </script>
-      <h3>
-        Note: After the video is finished it will automatically<br />
-        moved to the next, if the video looped, it means <br />
-        the website haven't updated yet and there's only one<br />
-        video playing just to remind you we are still working on this, <br>
-        anyways have fun watching we will update this<br />
+        // Function to toggle fullscreen
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                videoPlayer.requestFullscreen().catch(err => {
+                    console.log(`Error attempting to enable full-screen mode: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        fullscreenButton.addEventListener("click", toggleFullScreen);
+    </script>
+      <p>
+        Note: After the video is finished it will automatically
+        moved to the next,<br> if the video looped, it means
+        the website haven't updated yet,<br> and there's only one
+        video playing just to remind you <br> we are still working on this,
+        anyways have fun watching we will update this
         every month so have a good day!
-      </h3>
+      </p>
       <br />
       <hr />
       <h1>BROADCAST CREDITS</h1>
