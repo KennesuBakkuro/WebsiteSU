@@ -48,28 +48,43 @@
                 title: "Up Next: LACKADAISY",
                 source: "videos/e3.mp4",
             },
+            {
+                title: "Up Next: Jujutsu Kaisen Shibuya Arc",
+                source: "videos/e4.mp4",
+            },
+            {
+                title: "Up Next: Jujutsu Kaisen Shibuya Arc",
+                source: "videos/e5.mp4",
+            },
             // Add more video entries as needed
         ];
         let currentVideoIndex = 0;
 
         function playVideo(index) {
-            if (index < playlist.length) {
-                const video = playlist[index];
-                videoPlayer.src = video.source;
-                videoInfo.innerHTML = `<h2>${video.title}</h2>`;
-                currentVideoIndex = index;
-            }
-        }
+    if (index < playlist.length) {
+        const video = playlist[index];
+        videoPlayer.src = video.source;
+        videoInfo.innerHTML = `<h2>${video.title}</h2>`;
+        currentVideoIndex = index;
+    } else {
+        // If we've reached the end of the playlist, go back to the first video
+        currentVideoIndex = 0;
+        const video = playlist[currentVideoIndex];
+        videoPlayer.src = video.source;
+        videoInfo.innerHTML = `<h2>${video.title}</h2>`;
+    }
+}
 
-        // Event listener to play the next video when the current video ends
-        videoPlayer.addEventListener("ended", () => {
-            currentVideoIndex++;
-            playVideo(currentVideoIndex);
-            videoPlayer.play(); // Autoplay the next video
-        });
+// Event listener to play the next video when the current video ends
+videoPlayer.addEventListener("ended", () => {
+    currentVideoIndex++;
+    playVideo(currentVideoIndex);
+    videoPlayer.play(); // Autoplay the next video
+});
 
-        // Start playing the first video
-        playVideo(currentVideoIndex);
+// Start playing the first video
+playVideo(currentVideoIndex);
+
 
         // Function to toggle fullscreen
         function toggleFullScreen() {
